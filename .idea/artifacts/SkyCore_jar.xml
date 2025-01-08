@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SkyCore:jar">
+    <output-path>$PROJECT_DIR$/../../../../Minecraft Plugin Target</output-path>
+    <root id="archive" name="SkyCore.jar">
+      <element id="module-output" name="SkyCore" />
+    </root>
+  </artifact>
+</component>

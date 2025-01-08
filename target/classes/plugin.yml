@@ -1,0 +1,13 @@
+name: SkyCore
+version: '1.0-SkyCore'
+main: org.skycore.skycore.SkyCore
+api-version: '1.21'
+commands:
+  skycore:
+  sellitem:
+  worth:
+  shop:
+  sellall:
+  catalog:
+  buyamount:
+
