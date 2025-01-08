@@ -75,7 +75,7 @@ public class Events implements Listener {
     public void SendActionBar(Player p, String m) {
         p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(m));
     }
-
+// tes
     public void PlaySound(Sound s, Entity e, float volume, float pitch) {
         e.getWorld().playSound(e.getLocation(), s, volume, pitch);
     }
