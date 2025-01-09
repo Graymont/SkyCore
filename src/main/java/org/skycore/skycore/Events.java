@@ -39,6 +39,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 import javax.naming.Name;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -374,14 +375,20 @@ public class Events implements Listener {
                 type.toString().toLowerCase().replaceAll("_", "").trim()+item.getType().toString().toLowerCase().replaceAll("_", "").trim());
         if (price == null){
             price = 1000000.0;
+
         }
+        // andrew gay VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+        DecimalFormat format = new DecimalFormat("#,###");
+
+        String finishedFormat = format.format(price * item.getAmount());
+        // andrew gay ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         meta.getPersistentDataContainer().set(priceKey, PersistentDataType.DOUBLE, price);
         meta.setDisplayName(sendText("&aMob Spawner"));
 
         List<String> itemLore = new ArrayList<>();
 
         itemLore.add(sendText(""));
-        itemLore.add(sendText("&7Price: &f"+price*item.getAmount()));
+        itemLore.add(sendText("&7Price: &f"+finishedFormat));
         itemLore.add(sendText(""));
         if (type.toString().equals("BLAZE")){
             itemLore.add(sendText("&9Drops:"));
@@ -487,13 +494,18 @@ public class Events implements Listener {
         if (price == null){
             price = 1000000.0;
         }
+        // andrew gay VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+        DecimalFormat format = new DecimalFormat("#,###");
+
+        String finishedFormat = format.format(price * item.getAmount());
+        // andrew gay ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         meta.getPersistentDataContainer().set(priceKey, PersistentDataType.DOUBLE, price);
         meta.setDisplayName(sendText("&aSpawn Egg"));
 
         List<String> itemLore = new ArrayList<>();
         itemLore.add(sendText("&7Type: &f"+type));
         itemLore.add(sendText(""));
-        itemLore.add(sendText("&7Price: &f"+price*item.getAmount()));
+        itemLore.add(sendText("&7Price: &f"+finishedFormat));
         itemLore.add(sendText(""));
         itemLore.add(sendText("&aClick to buy"));
 
